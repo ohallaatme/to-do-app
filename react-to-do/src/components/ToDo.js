@@ -8,7 +8,7 @@ class ToDo extends Component {
 
 deleteToDo(e) {
    e.preventDefault()
-   this.props.deleteToDo(this.props.description);
+   this.props.deleteTodo(this.props.description);
 
  }
    render() {
