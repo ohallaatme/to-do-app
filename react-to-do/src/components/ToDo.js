@@ -4,15 +4,28 @@ import React, { Component } from 'react';
 //step 2 - define a class that extends Component
 class ToDo extends Component {
 //step 3 - define a render() method on your class. This Method is required
-  render() {
-    return (
-      <li>
-        <input type="checkbox" checked={ this.props.isCompleted } />
-        <span>{ this.props.description }</span>
-      </li>
-    );
-  }
-}
+
+
+deleteToDo(description) {
+   this.props.deleteToDo(description);
+ }
+   render() {
+     return (
+       <div className="wrapper">
+
+       <button className="deleteToDo" onClick = {(e) =>
+           this.deleteToDo(this.props.description)}>Delete</button>
+           {() => this.props.deleteToDo(this.props.description)}
+
+       <li>
+         <input type="checkbox" checked={ this.props.isCompleted }
+ onChange={ this.props.toggleComplete } />
+         <span>{ this.props.description }</span>
+       </li>
+       </div>
+     );
+   }
+ }
 //step 4 - export the class, use the default keyword since it will be the only export in this file
 
 export default ToDo;
