@@ -6,16 +6,18 @@ class ToDo extends Component {
 //step 3 - define a render() method on your class. This Method is required
 
 
-deleteToDo(description) {
-   this.props.deleteToDo(description);
+deleteToDo(e) {
+   e.preventDefault()
+   this.props.deleteToDo(this.props.description);
+
  }
    render() {
      return (
        <div className="wrapper">
 
        <button className="deleteToDo" onClick = {(e) =>
-           this.deleteToDo(this.props.description)}>Delete</button>
-           {() => this.props.deleteToDo(this.props.description)}
+           this.deleteToDo(e)}>Delete</button>
+           {() => this.deleteToDo(this.props.description)}
 
        <li>
          <input type="checkbox" checked={ this.props.isCompleted }
