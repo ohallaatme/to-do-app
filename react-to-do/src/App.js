@@ -16,9 +16,9 @@ class App extends Component {
     this.deleteTodo = this.deleteTodo.bind(this);
   }
 
-  deleteTodo(description) {
+  deleteTodo(e) {
     const filteredTodos = this.state.todos.filter((todo, index) =>
-    todo.description !== description);
+    todo.e !== e);
     this.setState({
       todos: filteredTodos
     });
